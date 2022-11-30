@@ -59,3 +59,5 @@ gem 'pry-rails'
 
 # ページネーション
 gem 'kaminari'
+
+gem 'ransack'

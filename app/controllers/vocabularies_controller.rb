@@ -3,8 +3,10 @@ class VocabulariesController < ApplicationController
     @vocabulary = Vocabulary.new
     @vocabularies = Vocabulary.order("id DESC")
     # ページネーションの設定
-    @vocabularies = Vocabulary.page(params[:page]).per(10)
+    @vocabularie = Vocabulary.page(params[:page]).per(10)
 
+    @q = Vocabulary.ransack(params[:q])
+    @vocabularies = @q.result
   end
 
   def create
@@ -18,4 +20,5 @@ class VocabulariesController < ApplicationController
   def vocabulary_params
     params.require(:vocabulary).permit(:word, :meaning, :level).merge(user_id: current_user.id)
   end
+
 end
