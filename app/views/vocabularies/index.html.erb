@@ -1,10 +1,17 @@
 <h1>MyTextBook</h1>
 <% if user_signed_in? %>
   <%= "#{current_user.nickname}さんは、ログインしています" %>
-  <%= link_to "ログアウト" , destroy_user_session_path, method: :delete %>
+  <%= link_to "ログアウト" , destroy_user_session_path, method: :delete %><br>
 <% else %>
   <%= link_to "新規登録", new_user_registration_path %>
-  <%= link_to "ログイン", new_user_session_path %>
+  <%= link_to "ログイン", new_user_session_path %><br>
 <% end %>
 
-<!-- <%= render partial: 'vocabulary', collection: @vocabularies %> -->
+<%= form_with(model: @vocabulary, local: true ) do |f| %>
+  <%= f.text_field :word, placeholder: "単語を入力" %>
+  <%= f.text_field :meaning, placeholder: "意味を入力" %>
+  <%= f.text_field :level, placeholder: "レベルを入力" %>
+  <%= f.submit "POST" , value: "登録" %>
+<% end %>
+
+<%= render partial: 'vocabulary', collection: @vocabularies %>
