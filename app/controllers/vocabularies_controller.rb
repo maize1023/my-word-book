@@ -16,9 +16,17 @@ class VocabulariesController < ApplicationController
     end
   end
 
+  def destroy
+    @vocabulary = Vocabulary.find(params[:id])
+    if @vocabulary.destroy
+      redirect_to root_path
+    end
+  end
+
+
+
   private
   def vocabulary_params
     params.require(:vocabulary).permit(:word, :meaning, :level).merge(user_id: current_user.id)
   end
-
 end
