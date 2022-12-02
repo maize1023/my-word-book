@@ -2,4 +2,5 @@
 <%= vocabulary.meaning %>
 <%= vocabulary.level %>
 <%= link_to '削除' , vocabulary_path(vocabulary.id), method: :delete %>
+<%= link_to '編集' , edit_vocabulary_path(vocabulary.id), method: :get %>
 <br>
