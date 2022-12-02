@@ -10,7 +10,7 @@
 <% if user_signed_in? %>
   <%= form_with(model: @vocabulary, local: true ) do |f| %>
     <%= f.text_field :word, placeholder: "単語を入力" %>
-    <%= f.text_field :meaning, placeholder: "意味を入力" %>
+    <%= f.text_area :meaning, placeholder: "意味を入力" %>
     <%= f.text_field :level, placeholder: "レベルを入力" %>
     <%= f.submit "POST" , value: "登録" %>
   <% end %>

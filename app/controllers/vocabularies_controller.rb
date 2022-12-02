@@ -23,7 +23,18 @@ class VocabulariesController < ApplicationController
     end
   end
 
+  def edit
+    @vocabulary = Vocabulary.find(params[:id])
+  end
 
+  def update
+    vocabulary = Vocabulary.find(params[:id])
+    if vocabulary.update(vocabulary_params)
+      redirect_to root_path
+    else
+      render edit
+    end
+  end
 
   private
   def vocabulary_params
