@@ -1,11 +1,17 @@
-<h1>MyTextBook</h1>
-<% if user_signed_in? %>
-  <%= "#{current_user.nickname}さんは、ログインしています" %>
-  <%= link_to "ログアウト" , destroy_user_session_path, method: :delete %><br>
-<% else %>
-  <%= link_to "新規登録", new_user_registration_path %>
-  <%= link_to "ログイン", new_user_session_path %><br>
-<% end %>
+<div class="header">
+  <div class="header-name">
+    <a href="#">MyTextBook</a>
+  </div>
+  <div class="header-right">
+    <% if user_signed_in? %>
+        <%= "#{current_user.nickname}さんは、ログインしています" %>
+        <%= link_to "ログアウト" , destroy_user_session_path, method: :delete %><br>
+    <% else %>
+        <%= link_to "新規登録" , new_user_registration_path %>
+        <%= link_to "ログイン" , new_user_session_path %><br>
+    <% end %>
+  </div>
+</div>
 
 <% if user_signed_in? %>
   <%= form_with(model: @vocabulary, local: true ) do |f| %>
