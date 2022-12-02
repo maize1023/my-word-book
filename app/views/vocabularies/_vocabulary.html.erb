@@ -1,6 +1,14 @@
-<%= vocabulary.word %>
-<%= vocabulary.meaning %>
-<%= vocabulary.level %>
-<%= link_to '削除' , vocabulary_path(vocabulary.id), method: :delete %>
-<%= link_to '編集' , edit_vocabulary_path(vocabulary.id), method: :get %>
-<br>
+<table border="1" style="border-collapse: collapse", class="show-words">
+  <tr>
+    <td class="word"><%= vocabulary.word %></td>
+    <td class="meaning"><%= vocabulary.meaning %></td>
+    <td class="level"><%= vocabulary.level %></td>
+    <td class="delete"><%= link_to '削除' , vocabulary_path(vocabulary.id), method: :delete %></td>
+    <td class="edit"><%= link_to '編集' , edit_vocabulary_path(vocabulary.id), method: :get %></td>
+  </tr>
+</table>
+
+<!-- <div class="delete&edit">
+  <%= link_to '削除' , vocabulary_path(vocabulary.id), method: :delete %>
+  <%= link_to '編集' , edit_vocabulary_path(vocabulary.id), method: :get %>
+</div> -->

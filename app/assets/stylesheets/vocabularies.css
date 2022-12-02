@@ -3,16 +3,66 @@ a {
   text-decoration: none;
 }
 
+
+/* header */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 100px;
   padding: 0 20px;
-  /* background-color: ; */
+  background-color: rgba(200, 194, 194, 0.75);
+  /* border: 1px solid black; */
 }
 
 .header-name a {
   font-size: 30px;
   color: black;
+}
+
+/* body */
+.main {
+  text-align: center;
+  align-items: center;
+  height: 100px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.new-word {
+  margin-left: 200px;
+}
+
+.word {
+  width: 200px;
+}
+.meaning {
+  width: 500px;
+  height: 50px;
+  min-height: 100px;
+}
+.level {
+  width: 200px;
+}
+
+.delete {
+  border: none;
+}
+
+/* テーブルのラベル */
+.word-label {
+  width: 200px;
+}
+
+.meaning-label {
+  width: 500px;
+}
+
+.level-label {
+  width: 200px;
+}
+
+.show-words {
+  margin-left: 50px;
 }

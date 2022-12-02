@@ -13,25 +13,38 @@
   </div>
 </div>
 
-<% if user_signed_in? %>
-  <%= form_with(model: @vocabulary, local: true ) do |f| %>
-    <%= f.text_field :word, placeholder: "単語を入力" %>
-    <%= f.text_area :meaning, placeholder: "意味を入力" %>
-    <%= f.text_field :level, placeholder: "レベルを入力" %>
-    <%= f.submit "POST" , value: "登録" %>
-  <% end %>
-<% end %>
-
-<!-- 検索欄 -->
-<%= search_form_for(@q, method: :get) do |f| %>
-  <%= f.search_field :word_cont, placeholder: '単語名' %>
-  <%= f.search_field :meaning_cont, placeholder: '単語の意味' %>
-  <%= f.search_field :level_eq, placeholder: 'レベル' %>
-  <%= f.submit %>
-<% end %>
-<!-- <%= @word %> -->
 
 
+<div class="main">
+  <div class="new-word">
+    <% if user_signed_in? %>
+      <%= form_with(model: @vocabulary, local: true ) do |f| %>
+        <%= f.text_field :word, placeholder: "単語を入力" %>
+        <%= f.text_field :meaning, placeholder: "意味を入力" %>
+        <%= f.text_field :level, placeholder: "レベルを入力" %>
+        <%= f.submit "POST" , value: "登録" %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <!-- 検索欄 -->
+  <div class="search-word">
+    <%= search_form_for(@q, method: :get, class: "search-form" ) do |f| %>
+      <%= f.search_field :word_cont, placeholder: '単語名' %><br>
+      <%= f.search_field :meaning_cont, placeholder: '単語の意味' %><br>
+      <%= f.search_field :level_eq, placeholder: 'レベル' %><br>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>
+
+<table>
+  <tr>
+    <th class="word-label">単語</th>
+    <th class="meaning-label">意味</th>
+    <th class="level-label">レベル</th>
+  </tr>
+</table>
 <%= render partial: 'vocabulary', collection: @vocabularies %>
 
 
