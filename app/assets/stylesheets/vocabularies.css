@@ -1,0 +1,81 @@
+/* 共通css */
+a {
+  text-decoration: none;
+}
+
+
+/* header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  padding: 0 20px;
+  background-color: rgba(200, 194, 194, 0.75);
+}
+
+.header-name a {
+  font-size: 30px;
+  color: black;
+}
+
+.header-right {
+  color: black;
+}
+
+
+.main {
+  text-align: center;
+  align-items: center;
+  height: 100px;
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.new-word {
+  margin-left: 200px;
+}
+
+/* 単語の表示部分(_vocabulary.html.erb) */
+.words-content {
+  margin-bottom: 50px;
+}
+
+.show-words {
+  margin-left: 50px;
+}
+
+.word {
+  width: 200px;
+}
+
+.word-label {
+  width: 200px;
+}
+
+.meaning {
+  width: 500px;
+  height: 50px;
+  min-height: 100px;
+}
+
+.meaning-label {
+  width: 500px;
+}
+
+.level {
+  width: 200px;
+}
+
+.level-label {
+  width: 200px;
+}
+
+.word-record {
+  height: 70px;
+}
+
+.delete {
+  border: none;
+}
