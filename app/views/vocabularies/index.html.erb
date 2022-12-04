@@ -40,28 +40,21 @@
 </div>
 
 <!-- 単語表示欄 -->
+<table border="1" style="border-collapse: collapse" , class="show-words">
+  <tr>
+    <th class="word-label">単語</th>
+    <th class="meaning-label">意味</th>
+    <th class="level-label">レベル</th>
+  </tr>
+</table>
 <% if user_signed_in? %>
   <div class="words-content">
-    <table border="1" style="border-collapse: collapse", class="show-words">
-      <tr>
-        <th class="word-label">単語</th>
-        <th class="meaning-label">意味</th>
-        <th class="level-label">レベル</th>
-      </tr>
-    </table>
     <%= render partial: 'vocabulary' , collection: @vocabularies %>
   </div>
 <% else %>
-  <table border="1" style="border-collapse: collapse" , class="show-words">
-    <tr>
-      <th class="word-label">単語</th>
-      <th class="meaning-label">意味</th>
-      <th class="level-label">レベル</th>
-    </tr>
-  </table>
   <%= render partial: 'model' %>
 <% end %>
 
 
 <!-- ページネーションの表示 -->
-<%= paginate @vocabularie %>
+<%= paginate @page %>
