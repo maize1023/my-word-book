@@ -16,6 +16,7 @@
 
 
 <div class="main">
+  <!-- 単語登録 -->
   <div class="new-word">
     <% if user_signed_in? %>
       <%= form_with(model: @vocabulary, local: true ) do |f| %>
@@ -27,7 +28,7 @@
     <% end %>
   </div>
 
-  <!-- 検索欄 -->
+  <!-- 単語検索 -->
   <div class="search-word">
     <%= search_form_for(@q, method: :get, class: "search-form" ) do |f| %>
       <%= f.search_field :word_cont, placeholder: '単語名' %><br>
@@ -38,14 +39,17 @@
   </div>
 </div>
 
-<table>
-  <tr>
-    <th class="word-label">単語</th>
-    <th class="meaning-label">意味</th>
-    <th class="level-label">レベル</th>
-  </tr>
-</table>
-<%= render partial: 'vocabulary', collection: @vocabularies %>
+<!-- 単語表示欄 -->
+<div class="words-content">
+  <table border="1" style="border-collapse: collapse", class="show-words">
+    <tr>
+      <th class="word-label">単語</th>
+      <th class="meaning-label">意味</th>
+      <th class="level-label">レベル</th>
+    </tr>
+  </table>
+  <%= render partial: 'vocabulary' , collection: @vocabularies %>
+</div>
 
 
 <!-- ページネーションの表示 -->
