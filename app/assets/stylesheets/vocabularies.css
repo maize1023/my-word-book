@@ -79,3 +79,8 @@ a {
 .delete {
   border: none;
 }
+
+
+.test {
+  border: 1px solid red;
+}

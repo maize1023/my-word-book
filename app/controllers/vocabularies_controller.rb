@@ -1,9 +1,13 @@
 class VocabulariesController < ApplicationController
   def index
     @vocabulary = Vocabulary.new
-    @vocabularies = Vocabulary.order("id DESC")
+<<<<<<< Updated upstream
+    @vocabularies = Vocabulary.all
+    @paginatable_array = Kaminari.paginate_array(@vocabularies).page(params[:page]).per(10)
+
+=======
     # ページネーションの設定
-    @vocabularie = Vocabulary.page(params[:page]).per(10)
+>>>>>>> Stashed changes
 
     @q = Vocabulary.ransack(params[:q])
     @vocabularies = @q.result
