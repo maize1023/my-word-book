@@ -45,7 +45,7 @@
   </tr>
 
   <% if user_signed_in? %>
-    <% @vocabularies.each do |vocabulary| %>
+    <% @paginatable_array.each do |vocabulary| %>
       <tr>
         <td><%= vocabulary.word %></td>
         <td><%= vocabulary.meaning %></td>
@@ -56,3 +56,6 @@
     <%= render partial: 'model' %>
   <% end %>
 </table>
+
+
+<%= paginate @paginatable_array %>
