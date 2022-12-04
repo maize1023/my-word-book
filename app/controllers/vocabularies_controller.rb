@@ -1,9 +1,9 @@
 class VocabulariesController < ApplicationController
   def index
     @vocabulary = Vocabulary.new
-    # @vocabularies = Vocabulary.order("id DESC")
-    # ページネーションの設定
-    @page = Vocabulary.page(params[:page]).per(10)
+    @vocabularies = Vocabulary.all
+
+
 
     @q = Vocabulary.ransack(params[:q])
     @vocabularies = @q.result

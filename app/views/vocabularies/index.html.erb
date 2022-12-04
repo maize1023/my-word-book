@@ -13,8 +13,6 @@
   </div>
 </div>
 
-
-
 <div class="main">
   <!-- 単語登録 -->
   <div class="new-word">
@@ -39,22 +37,22 @@
   </div>
 </div>
 
-<!-- 単語表示欄 -->
-<table border="1" style="border-collapse: collapse" , class="show-words">
+<table border="1" style="border-collapse: collapse" , class="show-words test">
   <tr>
     <th class="word-label">単語</th>
     <th class="meaning-label">意味</th>
     <th class="level-label">レベル</th>
   </tr>
+
+  <% if user_signed_in? %>
+    <% @vocabularies.each do |vocabulary| %>
+      <tr>
+        <td><%= vocabulary.word %></td>
+        <td><%= vocabulary.meaning %></td>
+        <td><%= vocabulary.level %></td>
+      </tr>
+    <% end %>
+  <% else %>
+    <%= render partial: 'model' %>
+  <% end %>
 </table>
-<% if user_signed_in? %>
-  <div class="words-content">
-    <%= render partial: 'vocabulary' , collection: @vocabularies %>
-  </div>
-<% else %>
-  <%= render partial: 'model' %>
-<% end %>
-
-
-<!-- ページネーションの表示 -->
-<%= paginate @page %>
