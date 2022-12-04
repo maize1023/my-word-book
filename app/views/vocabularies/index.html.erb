@@ -28,21 +28,27 @@
 
   <!-- 単語検索 -->
   <div class="search-word">
-    <%= search_form_for(@q, method: :get, class: "search-form" ) do |f| %>
+    <%= search_form_for @q, method: :get, class: "search-form" do |f| %>
       <%= f.search_field :word_cont, placeholder: '単語名' %><br>
       <%= f.search_field :meaning_cont, placeholder: '単語の意味' %><br>
       <%= f.search_field :level_eq, placeholder: 'レベル' %><br>
-      <%= f.submit %>
+      <%= f.submit '検索'%>
     <% end %>
   </div>
 </div>
 
+<<<<<<< Updated upstream
 <table border="1" style="border-collapse: collapse" , class="show-words test">
+=======
+
+<table border="1" style="border-collapse: collapse" , class="show-words">
+>>>>>>> Stashed changes
   <tr>
     <th class="word-label">単語</th>
     <th class="meaning-label">意味</th>
     <th class="level-label">レベル</th>
   </tr>
+<<<<<<< Updated upstream
 
   <% if user_signed_in? %>
     <% @paginatable_array.each do |vocabulary| %>
@@ -59,3 +65,35 @@
 
 
 <%= paginate @paginatable_array %>
+=======
+</table>
+<!-- 単語表示欄 -->
+<% if user_signed_in? %>
+  <div class="words-content">
+    <!-- <%= render partial: 'vocabulary' , collection: @vocabularies %> -->
+    <%= @vocabularies.each do |vocabulary| %>
+      <table border="1" style="border-collapse: collapse" , class="show-words">
+        <tr class="word-record">
+          <td class="word">
+            <%= vocabulary.word %>
+          </td>
+          <td class="meaning">
+            <%= vocabulary.meaning %>
+          </td>
+          <td class="level">
+            <%= vocabulary.level %>
+          </td>
+          <td class="delete">
+            <%= link_to '削除' , vocabulary_path(vocabulary.id), method: :delete %>
+          </td>
+          <td class="edit">
+            <%= link_to '編集' , edit_vocabulary_path(vocabulary.id), method: :get %>
+          </td>
+        </tr>
+      </table>
+    <% end %>
+  </div>
+<% else %>
+  <%= render partial: 'model' %>
+<% end %>
+>>>>>>> Stashed changes
