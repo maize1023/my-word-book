@@ -54,13 +54,15 @@
 
   <% if user_signed_in? %>
     <% @paginatable_array.each do |vocabulary| %>
-      <tr>
-        <td><%= vocabulary.word %></td>
-        <td><%= vocabulary.meaning %></td>
-        <td><%= vocabulary.level %></td>
-        <td><%= link_to "編集", edit_vocabulary_path(vocabulary.id) %></td>
-        <td><%= link_to "削除", vocabulary_path(vocabulary.id), method: :delete %></td>
-      </tr>
+      <% if current_user.id == vocabulary.user_id %>
+        <tr>
+          <td><%= vocabulary.word %></td>
+          <td><%= vocabulary.meaning %></td>
+          <td><%= vocabulary.level %></td>
+          <td><%= link_to "編集", edit_vocabulary_path(vocabulary.id) %></td>
+          <td><%= link_to "削除", vocabulary_path(vocabulary.id), method: :delete %></td>
+        </tr>
+      <% end %>
     <% end %>
   <% else %>
     <%= render partial: 'model' %>
