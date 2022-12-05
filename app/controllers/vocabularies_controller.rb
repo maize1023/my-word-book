@@ -5,7 +5,7 @@ class VocabulariesController < ApplicationController
     @paginatable_array = Kaminari.paginate_array(@vocabularies).page(params[:page]).per(10)
 
     @q = Vocabulary.ransack(params[:q])
-    @vocabularies = @q.result
+    # @vocabularies = @q.result
   end
 
   def create
@@ -33,6 +33,12 @@ class VocabulariesController < ApplicationController
     else
       render edit
     end
+  end
+
+
+  def search
+    @q = Vocabulary.ransack(params[:q])
+    @vocabularies = @q.result
   end
 
   private
