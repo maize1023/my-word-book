@@ -34,7 +34,10 @@ a {
 }
 
 .new-word {
-  margin-left: 200px;
+  margin-left: 130px;
+  padding: 25px 50px;
+  background-color:rgba(200, 194, 194, 0.75);
+  opacity: 0.5;
 }
 
 /* 単語の表示部分(_vocabulary.html.erb) */
@@ -44,6 +47,7 @@ a {
 
 .show-words {
   margin-left: 50px;
+  margin-bottom: 50px;
 }
 
 .word {
@@ -83,4 +87,21 @@ a {
 
 .test {
   border: 1px solid red;
+}
+
+
+/* 編集ビュー */
+.edit-form {
+  display: flex;
+}
+
+.edit-all {
+margin: 100px;
+}
+
+
+/* ページネーション関連 */
+.page-nations {
+  margin-left: 30px;
+  margin-bottom: 30px;
 }
