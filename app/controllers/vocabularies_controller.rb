@@ -13,6 +13,8 @@ class VocabulariesController < ApplicationController
       @vocabulary = Vocabulary.new(vocabulary_params)
       if @vocabulary.save
         redirect_to root_path
+      else
+        redirect_to root_path
       end
     else
       redirect_to root_path
