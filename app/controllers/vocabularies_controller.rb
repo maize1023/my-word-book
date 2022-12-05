@@ -9,8 +9,12 @@ class VocabulariesController < ApplicationController
   end
 
   def create
-    @vocabulary = Vocabulary.new(vocabulary_params)
-    if @vocabulary.save
+    if user_signed_in?
+      @vocabulary = Vocabulary.new(vocabulary_params)
+      if @vocabulary.save
+        redirect_to root_path
+      end
+    else
       redirect_to root_path
     end
   end
