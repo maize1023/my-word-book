@@ -84,3 +84,13 @@ a {
 .test {
   border: 1px solid red;
 }
+
+
+/* 編集ビュー */
+.edit-form {
+  display: flex;
+}
+
+.edit-all {
+margin: 100px;
+}

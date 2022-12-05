@@ -1,7 +1,19 @@
-<h3>編集する</h3>
-<%= form_with(model: @vocabulary, local: true) do |form| %>
-  <%= form.text_field :word, placeholder: "Nickname" %>
-  <%= form.text_area :meaning, placeholder: "Image Url" %>
-  <%= form.text_field :level, placeholder: "text" , rows: "10" %>
-  <%= form.submit "SEND" %>
-<% end %>
+<div class="edit-all">
+  <h3>編集する</h3>
+  <%= form_with(model: @vocabulary, local: true) do |form| %>
+    <div class="edit-form">
+      <div>
+        <%= form.text_field :word %>
+      </div>
+      <div>
+        <%= form.text_area :meaning %>
+      </div>
+      <div>
+        <%= form.text_field :level %>
+      </div>
+      <div>
+        <%= form.submit "編集" %>
+      </div>
+    </div>
+    <% end %>
+</div>
