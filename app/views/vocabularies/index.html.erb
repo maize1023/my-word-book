@@ -69,5 +69,7 @@
   <% end %>
 </table>
 
-
-<%= paginate @paginatable_array %>
+<div class="page-nations">
+  <%= page_entries_info @paginatable_array %>
+  <%= paginate @paginatable_array %>
+</div>

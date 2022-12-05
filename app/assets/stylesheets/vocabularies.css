@@ -98,3 +98,10 @@ a {
 .edit-all {
 margin: 100px;
 }
+
+
+/* ページネーション関連 */
+.page-nations {
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
