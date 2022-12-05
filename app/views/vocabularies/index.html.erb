@@ -54,8 +54,8 @@
         <td><%= vocabulary.word %></td>
         <td><%= vocabulary.meaning %></td>
         <td><%= vocabulary.level %></td>
-        <td><%= link_to %></td>
-        <td><%= link_to %></td>
+        <td><%= link_to "編集" %></td>
+        <td><%= link_to "削除" vocabulary_path, method: :delete %></td>
       </tr>
     <% end %>
   <% else %>
