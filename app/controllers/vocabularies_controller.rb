@@ -37,7 +37,6 @@ class VocabulariesController < ApplicationController
 
 
   def search
-    if user_si
     @q = Vocabulary.ransack(params[:q])
     @vocabularies = @q.result
   end
