@@ -33,6 +33,15 @@
         <%= f.search_field :level_eq, placeholder: 'レベル' %><br>
         <%= f.submit '検索'%>
       <% end %>
+
+
+            <a>
+              <%= link_to "記憶学習" ,  new_vocabulary_path %>
+            </a>
+
+
+
+
     <% else %>
       <%= search_form_for(@q, url: '#') do |f| %>
         <%= f.search_field :word_cont, placeholder: '単語名' %><br>

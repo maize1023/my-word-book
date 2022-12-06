@@ -2,7 +2,7 @@ class VocabulariesController < ApplicationController
   def index
     @vocabulary = Vocabulary.new
     @vocabularies = Vocabulary.all.order("created_at DESC")
-    @paginatable_array = Kaminari.paginate_array(@vocabularies).page(params[:page]).per(20)
+    @paginatable_array = Kaminari.paginate_array(@vocabularies).page(params[:page]).per(15)
 
     @q = Vocabulary.ransack(params[:q])
     # @vocabularies = @q.result
@@ -45,6 +45,10 @@ class VocabulariesController < ApplicationController
   def search
     @q = Vocabulary.ransack(params[:q])
     @vocabularies = @q.result
+  end
+
+  def show
+    @vocabularies = Vocabulary.all
   end
 
   private
