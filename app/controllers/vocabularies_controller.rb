@@ -8,6 +8,8 @@ class VocabulariesController < ApplicationController
     # @vocabularies = @q.result
   end
 
+
+
   def create
     if user_signed_in?
       @vocabulary = Vocabulary.new(vocabulary_params)
