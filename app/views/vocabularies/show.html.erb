@@ -1,0 +1,20 @@
+<table border="1" style="border-collapse: collapse" , class="show-words">
+  <tr>
+    <th class="word-label">単語</th>
+    <th class="meaning-label">意味</th>
+    <th class="level-label">レベル</th>
+  </tr>
+  <% @vocabularies.each do |vocabulary| %>
+    <tr>
+      <td>
+        <%= vocabulary.word %>
+      </td>
+      <td>
+        <%= vocabulary.meaning %>
+      </td>
+      <td>
+        <%= vocabulary.level %>
+      </td>
+    </tr>
+    <% end %>
+</table>

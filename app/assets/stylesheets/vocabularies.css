@@ -34,7 +34,7 @@ a {
 }
 
 .new-word {
-  margin-left: 130px;
+  margin-left: 100px;
   padding: 25px 50px;
   background-color:rgba(200, 194, 194, 0.75);
   opacity: 0.5;
@@ -48,6 +48,7 @@ a {
 .show-words {
   margin-left: 50px;
   margin-bottom: 50px;
+  margin-top: 50px;
 }
 
 .word {
@@ -104,4 +105,11 @@ margin: 100px;
 .page-nations {
   margin-left: 30px;
   margin-bottom: 30px;
+}
+
+/* 検索 */
+.search-word {
+  display: flex;
+  justify-content: space-around;
+  width: 500px;
 }
