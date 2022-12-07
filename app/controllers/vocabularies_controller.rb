@@ -49,7 +49,7 @@ class VocabulariesController < ApplicationController
     @vocabularies = @q.result
   end
 
-  def show
+  def selected_days
     @vocabularies = Vocabulary.all
   end
 
