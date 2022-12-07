@@ -11,7 +11,7 @@ a {
   align-items: center;
   height: 100px;
   padding: 0 20px;
-  background-color: rgba(200, 194, 194, 0.75);
+  background-color: rgba(255, 150, 31, 0.769);
 }
 
 .header-name a {
@@ -23,21 +23,43 @@ a {
   color: black;
 }
 
+/* 新規単語登録 */
+.new-word {
+  margin-left: 100px;
+  padding: 25px 50px;
+  background-color: rgba(255, 150, 31, 0.769);
+  opacity: 0.5;
+  display: flex;
+  width: 1000px;
+}
+
+/* 検索 */
+.search-word {
+  display: flex;
+  justify-content: space-around;
+  width: 500px;
+  padding-top: 20px;
+  margin-top: 30px;
+}
+
+/* 記憶学習ボタン */
+.memory {
+  background-color: white;
+  border: 1px solid black;
+  margin-top: 20px;
+}
+
+.all {
+  background-color: rgb(255, 224, 151);
+}
 
 .main {
   text-align: center;
   align-items: center;
   height: 100px;
-  margin: 20px;
+  /* margin: 20px; */
   display: flex;
   justify-content: space-between;
-}
-
-.new-word {
-  margin-left: 100px;
-  padding: 25px 50px;
-  background-color:rgba(200, 194, 194, 0.75);
-  opacity: 0.5;
 }
 
 /* 単語の表示部分(_vocabulary.html.erb) */
@@ -104,12 +126,5 @@ margin: 100px;
 /* ページネーション関連 */
 .page-nations {
   margin-left: 30px;
-  margin-bottom: 30px;
-}
-
-/* 検索 */
-.search-word {
-  display: flex;
-  justify-content: space-around;
-  width: 500px;
+  padding-bottom: 30px;
 }
