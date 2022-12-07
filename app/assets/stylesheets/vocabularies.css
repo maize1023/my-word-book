@@ -51,6 +51,7 @@ a {
 
 .all {
   background-color: rgb(255, 224, 151);
+  height: 100vh;
 }
 
 .main {
@@ -71,6 +72,8 @@ a {
   margin-left: 50px;
   margin-bottom: 50px;
   margin-top: 50px;
+  display: flex;
+  width: 900px;
 }
 
 .word {
@@ -103,20 +106,6 @@ a {
   height: 70px;
 }
 
-.delete {
-  border: none;
-}
-
-
-.test {
-  border: 1px solid red;
-}
-
-
-/* 編集ビュー */
-.edit-form {
-  display: flex;
-}
 
 .edit-all {
 margin: 100px;
@@ -127,4 +116,12 @@ margin: 100px;
 .page-nations {
   margin-left: 30px;
   padding-bottom: 30px;
+}
+
+.edit {
+  width: 50px;
+}
+
+.delete {
+  width: 50px;
 }

@@ -48,8 +48,6 @@
     </div>
   </div>
 
-
-
   <table border="1" style="border-collapse: collapse" , class="show-words">
     <tr>
       <th class="word-label">単語</th>
@@ -64,8 +62,8 @@
             <td><%= vocabulary.word %></td>
             <td><%= vocabulary.meaning %></td>
             <td><%= vocabulary.level %></td>
-            <td><%= link_to "編集", edit_vocabulary_path(vocabulary.id) %></td>
-            <td><%= link_to "削除", vocabulary_path(vocabulary.id), method: :delete %></td>
+            <td class="edit"><%= link_to "編集", edit_vocabulary_path(vocabulary.id) %></td>
+            <td class="delete"><%= link_to "削除", vocabulary_path(vocabulary.id), method: :delete %></td>
           </tr>
         <% end %>
       <% end %>
@@ -73,6 +71,8 @@
       <%= render partial: 'model' %>
     <% end %>
   </table>
+
+
 
   <div class="page-nations">
     <%= page_entries_info @paginatable_array %>
