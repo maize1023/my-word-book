@@ -7,18 +7,52 @@
       <th class="level-label">レベル</th>
     </tr>
     <% @vocabularies.each do |vocabulary| %>
-      <% if vocabulary.created_at.strftime('%Y/%m/%d') == Date.today.ago(2.days).strftime('%Y/%m/%d') %>
+      <% if vocabulary.created_at.strftime('%Y/%m/%d') == Date.today.yesterday.strftime('%Y/%m/%d') %>
         <tr>
-          <td>
-            <%= vocabulary.word %>
-          </td>
-          <td>
-            <%= vocabulary.meaning %>
-          </td>
-          <td>
-            <%= vocabulary.level %>
-          </td>
+          <td><%= vocabulary.word %></td>
+          <td><%= vocabulary.meaning %></td>
+          <td><%= vocabulary.level %></td>
         </tr>
-        <% end %>
       <% end %>
+
+      <% if vocabulary.created_at.strftime('%Y/%m/%d')==Date.today.ago(4.days).strftime('%Y/%m/%d') %>
+        <tr>
+          <td><%= vocabulary.word %></td>
+          <td><%= vocabulary.meaning %></td>
+          <td><%= vocabulary.level %></td>
+        </tr>
+      <% end %>
+
+      <% if vocabulary.created_at.strftime('%Y/%m/%d')==Date.today.ago(7.days).strftime('%Y/%m/%d') %>
+        <tr>
+          <td><%= vocabulary.word %></td>
+          <td><%= vocabulary.meaning %></td>
+          <td><%= vocabulary.level %></td>
+        </tr>
+      <% end %>
+
+      <% if vocabulary.created_at.strftime('%Y/%m/%d')==Date.today.ago(11.days).strftime('%Y/%m/%d') %>
+        <tr>
+          <td><%= vocabulary.word %></td>
+          <td><%= vocabulary.meaning %></td>
+          <td><%= vocabulary.level %></td>
+        </tr>
+      <% end %>
+
+      <% if vocabulary.created_at.strftime('%Y/%m/%d')==Date.today.ago(15.days).strftime('%Y/%m/%d') %>
+        <tr>
+          <td><%= vocabulary.word %></td>
+          <td><%= vocabulary.meaning %></td>
+          <td><%= vocabulary.level %></td>
+        </tr>
+      <% end %>
+
+      <% if vocabulary.created_at.strftime('%Y/%m/%d')==Date.today.ago(20.days).strftime('%Y/%m/%d') %>
+        <tr>
+          <td><%= vocabulary.word %></td>
+          <td><%= vocabulary.meaning %></td>
+          <td><%= vocabulary.level %></td>
+        </tr>
+      <% end %>
+    <% end %>
   </table>
