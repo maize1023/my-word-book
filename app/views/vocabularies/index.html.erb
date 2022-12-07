@@ -32,6 +32,7 @@
         <%= f.search_field :meaning_cont, placeholder: '単語の意味' %><br>
         <%= f.search_field :level_eq, placeholder: 'レベル' %><br>
         <%= f.submit '検索'%>
+        <%= link_to "記憶学習" , vocabulary_path(current_user.id) %>
       <% end %>
     <% else %>
       <%= search_form_for(@q, url: '#') do |f| %>
@@ -44,9 +45,7 @@
   </div>
 </div>
 
-<a>
-  <%= link_to "記憶学習" , vocabulary_path(current_user.id) %>
-</a>
+
 
 <table border="1" style="border-collapse: collapse" , class="show-words">
   <tr>
