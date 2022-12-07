@@ -49,8 +49,8 @@ class VocabulariesController < ApplicationController
     @vocabularies = @q.result
   end
 
-  def selected_days
-    @vocabularies = Vocabulary.all
+  def show
+    @vocabularies = Vocabulary.where(params[:id])
   end
 
   private
