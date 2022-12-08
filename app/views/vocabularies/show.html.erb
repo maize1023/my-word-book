@@ -1,10 +1,10 @@
- require “date”
+ <!-- require “date” -->
 
   <table border="1" style="border-collapse: collapse" , class="show-words">
     <tr>
       <th class="word-label">単語</th>
       <th class="meaning-label">意味</th>
-      <th class="level-label">レベル</th>
+      <th class="level-label">難易度</th>
     </tr>
     <% @vocabularies.each do |vocabulary| %>
       <% if vocabulary.created_at.strftime('%Y/%m/%d') == Date.today.yesterday.strftime('%Y/%m/%d') %>
@@ -56,3 +56,6 @@
       <% end %>
     <% end %>
   </table>
+
+
+  <%= link_to "トップに戻る" , root_path %>

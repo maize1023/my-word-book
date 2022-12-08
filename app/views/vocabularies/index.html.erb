@@ -1,17 +1,3 @@
-<div class="header">
-  <div class="header-name">
-    <a href="#">暗記パン</a>
-  </div>
-  <div class="header-right">
-    <% if user_signed_in? %>
-        <%= "#{current_user.nickname}さんは、ログインしています" %>
-        <%= link_to "ログアウト" , destroy_user_session_path, method: :delete %><br>
-    <% else %>
-        <%= link_to "新規登録" , new_user_registration_path %>
-        <%= link_to "ログイン" , new_user_session_path %><br>
-    <% end %>
-  </div>
-</div>
 
 <div class="all">
   <div class="main">
@@ -20,7 +6,7 @@
         <%= form_with(model: @vocabulary, local: true ) do |f| %>
           <%= f.text_field :word, placeholder: "単語を入力" %>
           <%= f.text_field :meaning, placeholder: "意味を入力" %>
-          <%= f.text_field :level, placeholder: "レベルを入力" %>
+          <%= f.text_field :level, placeholder: "難易度を入力" %>
           <%= f.submit "POST" , value: "登録" %>
         <% end %>
       </div>
@@ -31,7 +17,7 @@
         <%= search_form_for(@q, url: search_vocabularies_path) do |f| %>
           <%= f.search_field :word_cont, placeholder: '単語名' %><br>
           <%= f.search_field :meaning_cont, placeholder: '単語の意味' %><br>
-          <%= f.search_field :level_eq, placeholder: 'レベル' %><br>
+          <%= f.search_field :level_eq, placeholder: '難易度' %><br>
           <%= f.submit '検索'%><br>
           <div class="memory">
             <%= link_to "記憶学習" , vocabulary_path(current_user.id) %>
@@ -41,7 +27,7 @@
         <%= search_form_for(@q, url: '#') do |f| %>
           <%= f.search_field :word_cont, placeholder: '単語名' %><br>
           <%= f.search_field :meaning_cont, placeholder: '単語の意味' %><br>
-          <%= f.search_field :level_eq, placeholder: 'レベル' %><br>
+          <%= f.search_field :level_eq, placeholder: '難易度' %><br>
           <%= f.submit '検索' %>
         <% end %>
       <% end %>
@@ -52,7 +38,7 @@
     <tr>
       <th class="word-label">単語</th>
       <th class="meaning-label">意味</th>
-      <th class="level-label">レベル</th>
+      <th class="level-label">難易度</th>
     </tr>
 
     <% if user_signed_in? %>
@@ -63,7 +49,7 @@
             <td><%= vocabulary.meaning %></td>
             <td><%= vocabulary.level %></td>
             <td class="edit"><%= link_to "編集", edit_vocabulary_path(vocabulary.id) %></td>
-            <td class="delete"><%= link_to "削除", vocabulary_path(vocabulary.id), method: :delete %></td>
+            <td class="delete"><%= link_to "削除" , vocabulary_path(vocabulary.id), method: :delete %></td>
           </tr>
         <% end %>
       <% end %>
