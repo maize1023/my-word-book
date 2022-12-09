@@ -1,4 +1,3 @@
-
 <div class="all">
   <div class="main">
     <!-- 単語登録 -->
@@ -6,7 +5,7 @@
         <%= form_with(model: @vocabulary, local: true ) do |f| %>
           <%= f.text_field :word, placeholder: "単語を入力" %>
           <%= f.text_field :meaning, placeholder: "意味を入力" %>
-          <%= f.text_field :level, placeholder: "難易度を入力" %>
+          <%= f.text_field :level, placeholder: "難易度(1~5)入力" %>
           <%= f.submit "POST" , value: "登録" %>
         <% end %>
       </div>
@@ -20,7 +19,7 @@
           <%= f.search_field :level_eq, placeholder: '難易度' %><br>
           <%= f.submit '検索'%><br>
           <div class="memory">
-            <%= link_to "記憶学習" , vocabulary_path(current_user.id) %>
+            <%= link_to "記憶学習をする！！" , vocabulary_path(current_user.id) %>
           </div>
         <% end %>
       <% else %>
